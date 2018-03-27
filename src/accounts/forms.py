@@ -20,7 +20,7 @@ class UserLoginForm(forms.Form):
 			if not user:
 				raise forms.ValidationError("This user does not exist")
 
-			if not user.checkpassword(password):
+			if not user.check_password(password):
 				raise forms.ValidationError("Incorrect Password")
 
 			if not user.is_active:
